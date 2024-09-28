@@ -3,7 +3,7 @@ import paramiko
 def ssh_connect():
     flag = True
     while  flag == True:
-        host = "" # see if I need to make a string for host, username, and password variables
+        host = ""
         host = input("What is the host address: ")
         username = ""
         username = input("What is the username: ")
@@ -15,7 +15,6 @@ def ssh_connect():
         client.connect(host, username=username, password=password)
         
         print(f"Connected to: {host}")
-        # client.invoke_shell(term='vt100', width=80, height=24, width_pixels=0, height_pixels=0, environment=None)
         answer = input("Run command? (yes/no)")
         
         while answer == "yes" or flag == True:
